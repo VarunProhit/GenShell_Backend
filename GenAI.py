@@ -26,5 +26,6 @@ class GenerativeAI:
 
     def generate_response(self, user_input):
         response = self.model.generate_content(self.CONST_COMMAND + self.CONST_OS + user_input)
-
+        if not response.parts:
+            raise ValueError('Invalid input is given.')
         return response.text
