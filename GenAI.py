@@ -8,7 +8,7 @@ import platform
 class GenerativeAI:
     CONST_COMMAND = ("Show command for the given query. Show only command not any other description with it. Only "
                      "provide output if the user asks for a specific operating system command.If the user asks "
-                     "anything else or requests a list of commands, respond with 'invalid input is given.'. Also the "
+                     "anything else or requests a list of commands, respond with 'invalid input is given'. Also the "
                      "os is")
     CONST_OS = platform.system()
 
@@ -26,6 +26,6 @@ class GenerativeAI:
 
     def generate_response(self, user_input):
         response = self.model.generate_content(self.CONST_COMMAND + self.CONST_OS + user_input)
-        if not response.parts:
+        if not response.parts or response.text.lower().startswith('invalid'):
             raise ValueError('Invalid input is given.')
         return response.text
