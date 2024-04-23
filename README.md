@@ -1,6 +1,6 @@
 # **GenShell_Backend**
 
-GenShell is a Python project that utilizes generative AI to generate OS commands and database queries based on the input provided. It generates as well as runs the commands to show the desired output.
+GenShell is a Python project that utilizes generative AI to generate OS commands and database queries based on the input provided. It generates as well as runs the commands to show the desired output. The "GenShell" backend repository acts as the bridge between the client and server, enabling seamless command execution. It includes robust APIs for server communication and efficient command retrieval, ensuring smooth operation of the project.
 
 ## Overview
 
